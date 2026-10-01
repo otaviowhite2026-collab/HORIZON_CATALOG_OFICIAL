@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: horizon-catalog
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: node server.js
+    healthCheckPath: /manifest.json
+    envVars:
+      - key: TMDB_API_KEY
+        sync: false
+      - key: LANGUAGE
+        value: pt-BR
+      - key: REGION
+        value: BR
+      - key: INCLUDE_SPECIALS
+        value: "true"
+      - key: PREFER_IMDB_IDS
+        value: "true"
